@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FZ_PLATFORM_WINDOWS;FZ_BUILD_DLL;FZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -102,7 +102,7 @@ copy /B /Y "..\bin\Debug-windows-x86_64\Fazel\Fazel.dll" "..\bin\Debug-windows-x
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FZ_PLATFORM_WINDOWS;FZ_BUILD_DLL;FZ_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -129,7 +129,7 @@ copy /B /Y "..\bin\Release-windows-x86_64\Fazel\Fazel.dll" "..\bin\Release-windo
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FZ_PLATFORM_WINDOWS;FZ_BUILD_DLL;FZ_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;vendor\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -156,6 +156,10 @@ copy /B /Y "..\bin\Dist-windows-x86_64\Fazel\Fazel.dll" "..\bin\Dist-windows-x86
     <ClInclude Include="src\Fazel\Application.h" />
     <ClInclude Include="src\Fazel\Core.h" />
     <ClInclude Include="src\Fazel\EntryPoint.h" />
+    <ClInclude Include="src\Fazel\Events\ApplicationEvent.h" />
+    <ClInclude Include="src\Fazel\Events\Event.h" />
+    <ClInclude Include="src\Fazel\Events\KeyEvent.h" />
+    <ClInclude Include="src\Fazel\Events\MouseEvent.h" />
     <ClInclude Include="src\Fazel\Log.h" />
   </ItemGroup>
   <ItemGroup>

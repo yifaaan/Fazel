@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Core.h"
-
+#include "Fazel/Events/Event.h"
 
 namespace Fazel
 {

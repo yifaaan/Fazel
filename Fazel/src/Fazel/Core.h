@@ -9,3 +9,5 @@
 #else
 	#error Fazel only supports Windows!
 #endif // FZ_BUILD_DLL
+
+#define BIT(x) (1 << x)

@@ -4,6 +4,9 @@
     <Filter Include="Fazel">
       <UniqueIdentifier>{97F8280D-030D-51BE-CC8E-F41D38624DEF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fazel\Events">
+      <UniqueIdentifier>{9B34AC9C-8797-3B41-301D-74F71C5F07C4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fazel.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Fazel\EntryPoint.h">
       <Filter>Fazel</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fazel\Events\ApplicationEvent.h">
+      <Filter>Fazel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fazel\Events\Event.h">
+      <Filter>Fazel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fazel\Events\KeyEvent.h">
+      <Filter>Fazel\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fazel\Events\MouseEvent.h">
+      <Filter>Fazel\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Fazel\Log.h">
       <Filter>Fazel</Filter>
