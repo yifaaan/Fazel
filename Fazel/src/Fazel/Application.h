@@ -2,6 +2,7 @@
 
 #include "Core.h"
 
+
 namespace Fazel
 {
 	class FAZEL_API Application
