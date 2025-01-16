@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Fazel
 {
 	class FAZEL_API KeyEvent : public Event

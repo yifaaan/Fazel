@@ -11,6 +11,12 @@ workspace "Fazel"
 -- bin\$(Configuration)-$(Platform)\$(ProjectName)\
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative the root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Fazel/vendor/GLFW/include"
+
+-- same as #include <Fazel/vendor/GLFW/premake5.lua>
+include "Fazel/vendor/GLFW"
 
 project "Fazel"
 	location "Fazel"
@@ -21,6 +27,9 @@ project "Fazel"
 	-- bin-int/Debug-windows-x64/Fazel
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "fzpch.h"
+	pchsource "Fazel/src/fzpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -30,7 +39,14 @@ project "Fazel"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib",
 	}
 
 	filter "system:windows"
@@ -41,7 +57,8 @@ project "Fazel"
 		defines
 		{
 			"FZ_PLATFORM_WINDOWS",
-			"FZ_BUILD_DLL"
+			"FZ_BUILD_DLL",
+			-- "FZ_ENABLE_ASSERTS"
 		}
 
 		-- %[..] is to make path relative to project correctly (take absolute path)
@@ -56,17 +73,19 @@ project "Fazel"
 		defines "FZ_DEBUG"
 		symbols "On"
 		buildoptions "/utf-8"
-
+		buildoptions "/MDd"
 
 	filter "configurations:Release"
 		defines "FZ_RELEASE"
 		optimize "On"
 		buildoptions "/utf-8"
+		buildoptions "/MD"
 
 	filter "configurations:Dist"
 		defines "FZ_DEBUG"
 		optimize "On"
 		buildoptions "/utf-8"
+		buildoptions "/MD"
 
 project "Sandbox"
 	location "Sandbox"

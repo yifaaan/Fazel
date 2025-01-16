@@ -2,9 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
-
 namespace Fazel
 {
 	class FAZEL_API WindowResizeEvent : public Event

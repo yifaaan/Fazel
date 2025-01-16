@@ -1,11 +1,9 @@
 #pragma once
 
+#include "fzpch.h"
 #include "Fazel/Core.h"
 
-#include "spdlog/fmt/ostr.h"
-
-#include <string>
-#include <functional>
+#include <spdlog/fmt/ostr.h>
 
 namespace Fazel
 {
@@ -98,7 +96,7 @@ namespace Fazel
 	};
 
 
-	std::ostream& operator<<(std::ostream& os, const Event& e)
+	inline std::ostream& operator<<(std::ostream& os, const Event& e)
 	{
 		return os << e.ToString();
 	}

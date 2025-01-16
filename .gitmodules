@@ -2,3 +2,6 @@
 	path = Fazel/vendor/spdlog
 	url = https://github.com/gabime/spdlog.git
 	branch = v1.2.1
+[submodule "Fazel/vendor/GLFW"]
+	path = Fazel/vendor/GLFW
+	url = https://github.com/TheCherno/glfw
