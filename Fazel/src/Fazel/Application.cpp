@@ -14,6 +14,7 @@ namespace Fazel
 	Application::Application()
 	{
 		window = std::unique_ptr<Window>(Window::Create());
+		window->SetEventCallback(std::bind(&Application::OnEvent, this, std::placeholders::_1));
 	}
 
 	void Application::Run()
@@ -34,5 +35,18 @@ namespace Fazel
 			glClear(GL_COLOR_BUFFER_BIT);
 			window->OnUpdate();
 		}
+	}
+
+	void Application::OnEvent(Event& e)
+	{
+		EventDispatcher dispatcher(e);
+		dispatcher.Dispatch<WindowCloseEvent>(std::bind(&Application::OnWindowClosed, this, std::placeholders::_1));
+		FZ_CORE_TRACE("{}", e);
+	}
+
+	bool Application::OnWindowClosed(WindowCloseEvent& e)
+	{
+		running = false;
+		return true;
 	}
 }

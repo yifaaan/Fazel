@@ -27,7 +27,7 @@ namespace Fazel
 
 		inline auto SetEventCallback(const EventCallbackFn& callback) -> void override
 		{
-			data.eventCallback = callback;
+			data.EventCallback = callback;
 		}
 
 		auto SetVSync(bool enabled) -> void override;
@@ -46,7 +46,7 @@ namespace Fazel
 			unsigned int width;
 			unsigned int height;
 			bool vSync;
-			EventCallbackFn eventCallback;
+			EventCallbackFn EventCallback;
 		};
 
 		WindowData data;

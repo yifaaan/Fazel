@@ -69,6 +69,8 @@ namespace Fazel
 		}
 
 	protected:
+		friend class EventDispatcher;
+
 		bool handled = false;
 	};
 

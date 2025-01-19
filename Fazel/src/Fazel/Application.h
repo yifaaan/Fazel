@@ -1,8 +1,10 @@
 #pragma once
 
 #include "Core.h"
-#include "Fazel/Events/Event.h"
 #include "Window.h"
+
+#include "Fazel/Events/Event.h"
+#include "Fazel/Events/ApplicationEvent.h"
 
 namespace Fazel
 {
@@ -15,7 +17,11 @@ namespace Fazel
 
 		void Run();
 
+		void OnEvent(Event& e);
+
 	private:
+		bool OnWindowClosed(WindowCloseEvent& e);
+
 		std::unique_ptr<Window> window;
 		bool running = true;
 	};
